@@ -1,0 +1,1262 @@
+/* =========================================================
+   YYYangMike · V1 Clean Stylesheet
+   Warm Tech / Apple-inspired Minimalism
+   Cleaned from iterative overrides into a single source of truth.
+   ========================================================= */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --yy-bg: #f5f3ef;
+  --yy-bg-soft: #efebe6;
+  --yy-bg-alt: #ece8e2;
+
+  --yy-text: #17181d;
+  --yy-text-soft: #50535d;
+  --yy-text-muted: #787b85;
+
+  --yy-line: rgba(23, 24, 29, 0.08);
+
+  --yy-blue: rgba(129, 145, 168, 0.26);
+  --yy-blue-soft: rgba(155, 169, 185, 0.18);
+  --yy-lilac: rgba(179, 170, 189, 0.18);
+  --yy-warm: rgba(208, 191, 176, 0.22);
+
+  --yy-shadow-soft: 0 20px 60px rgba(26, 28, 34, 0.06);
+  --yy-shadow-card: 0 28px 80px rgba(28, 30, 36, 0.08);
+}
+
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f7f4f0 0%, #f2efea 100%);
+  color: var(--yy-text);
+
+  font-family:
+    "Segoe UI Variable Text",
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#yy-home {
+  color: var(--yy-text);
+}
+
+
+/* ---------- Remove Butterfly page shell on custom homepage ---------- */
+body:has(#yy-home) #content-inner,
+body:has(#yy-home) .layout {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body:has(#yy-home) #page {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+body:has(#yy-home) #page > * {
+  max-width: none;
+}
+
+
+
+/* ---------- Navigation ---------- */
+
+#nav {
+  background: rgba(247, 244, 240, 0.34) !important;
+  border-bottom: 1px solid rgba(23, 24, 29, 0.025) !important;
+  box-shadow: none !important;
+
+  backdrop-filter: blur(12px) saturate(115%);
+  -webkit-backdrop-filter: blur(12px) saturate(115%);
+
+  transition:
+    background 0.38s ease,
+    backdrop-filter 0.38s ease,
+    box-shadow 0.38s ease,
+    border-color 0.38s ease;
+}
+
+/* 向下滚动后的状态 */
+body.yy-scrolled #nav {
+  background: rgba(247, 244, 240, 0.80) !important;
+
+  border-bottom:
+    1px solid rgba(23, 24, 29, 0.06) !important;
+
+  box-shadow:
+    0 10px 32px rgba(24, 26, 31, 0.055) !important;
+
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+#nav .site-name,
+#nav .menus_item a,
+#nav .site-page {
+  color: rgba(23, 24, 29, 0.80) !important;
+
+  font-weight: 580;
+  letter-spacing: 0.005em;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+#nav .menus_item a:hover,
+#nav .site-page:hover {
+  color: #111218 !important;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.yy-hero {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6.5rem 2rem 7.5rem;
+
+  text-align: center;
+  overflow: hidden;
+
+  background: linear-gradient(180deg, #f7f4f0 0%, #f2efea 100%);
+}
+
+/* ambient light */
+.yy-hero::before,
+.yy-hero::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+
+  pointer-events: none;
+  filter: blur(65px);
+  will-change: transform, opacity;
+}
+
+.yy-hero::before {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(138, 152, 171, 0.34), transparent 18%),
+    radial-gradient(circle at 82% 22%, rgba(201, 187, 176, 0.26), transparent 16%),
+    radial-gradient(circle at 72% 78%, rgba(170, 179, 189, 0.22), transparent 18%),
+    radial-gradient(circle at 24% 76%, rgba(182, 171, 190, 0.20), transparent 16%);
+
+  animation: yyAmbientFloatA 19s ease-in-out infinite alternate;
+  opacity: 0.9;
+}
+
+.yy-hero::after {
+  background:
+    radial-gradient(circle at 32% 38%, rgba(154, 169, 185, 0.18), transparent 18%),
+    radial-gradient(circle at 68% 34%, rgba(204, 193, 183, 0.18), transparent 16%),
+    radial-gradient(circle at 54% 68%, rgba(176, 164, 184, 0.15), transparent 16%);
+
+  animation: yyAmbientFloatB 25s ease-in-out infinite alternate;
+  opacity: 0.75;
+}
+
+.yy-hero-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(1100px, 100%);
+  margin: -6vh auto 0;
+
+  opacity: 0;
+  transform: translateY(18px) scale(0.99);
+
+  transition:
+    opacity 0.95s ease,
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.yy-ready .yy-hero-content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.yy-hero h1 {
+  margin: 0 0 2.2rem 0;
+  max-width: 100%;
+
+  font-size: clamp(4.2rem, 8.6vw, 7rem);
+  line-height: 1.05;
+
+  font-weight: 640;
+  letter-spacing: -0.04em;
+
+  color: var(--yy-text);
+  text-wrap: balance;
+}
+
+.yy-hero-cn {
+  margin: 0 0 3.35rem 0;
+
+  font-size: clamp(1.26rem, 1.85vw, 1.68rem);
+  line-height: 1.6;
+
+  font-weight: 420;
+  letter-spacing: 0.015em;
+
+  color: #60636c;
+}
+
+
+/* ---------- Hero actions ---------- */
+.yy-hero-actions {
+  margin-top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.35rem;
+  flex-wrap: wrap;
+}
+
+.yy-btn {
+  min-height: 3.8rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.72rem;
+
+  padding: 0 2rem;
+
+  border-radius: 999px;
+
+  font-size: 1rem;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+
+  text-decoration: none !important;
+
+  transition:
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.34s ease,
+    background 0.34s ease,
+    border-color 0.34s ease,
+    color 0.34s ease;
+}
+
+.yy-btn-primary {
+  color: #f7f6f4 !important;
+  background: rgba(23, 24, 29, 0.92);
+  box-shadow: 0 16px 36px rgba(25, 27, 33, 0.15);
+}
+
+.yy-btn-primary:hover {
+  transform: translateY(-3px);
+  background: rgba(17, 18, 24, 0.95);
+  box-shadow: 0 24px 50px rgba(25, 27, 33, 0.18);
+}
+
+.yy-btn-primary span {
+  transition: transform 0.3s ease;
+}
+
+.yy-btn-primary:hover span {
+  transform: translateX(4px);
+}
+
+.yy-btn-secondary {
+  color: #22242a !important;
+
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(23, 24, 29, 0.10);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.yy-btn-secondary:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.46);
+  box-shadow: 0 18px 38px rgba(30, 32, 38, 0.08);
+}
+
+
+/* ---------- Scroll hint ---------- */
+.yy-scroll-hint {
+  position: absolute;
+
+  bottom: 2.2rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #5e616b !important;
+  font-size: 1.5rem;
+
+  text-decoration: none !important;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+body.yy-ready .yy-scroll-hint {
+  opacity: 1;
+  animation: yyScrollFloat 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+.yy-section {
+  position: relative;
+
+  min-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 8rem max(7vw, 2rem);
+}
+
+
+/* ---------- Philosophy ---------- */
+.yy-philosophy {
+  align-items: center;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f2efea 0%,
+      #efebe6 38%,
+      #ebe9e7 100%
+    );
+}
+
+.yy-philosophy p {
+  margin: 0;
+
+  max-width: 1180px;
+
+  font-size: clamp(2.45rem, 5.2vw, 5.1rem);
+  line-height: 1.2;
+
+  font-weight: 650;
+  letter-spacing: -0.045em;
+
+  text-wrap: balance;
+
+  opacity: 0;
+  transform: translateY(26px);
+
+  transition:
+    opacity 0.95s ease,
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ---------- Manifesto ---------- */
+.yy-manifesto {
+  min-height: 92vh;
+
+  justify-content: center;
+
+  padding-left: max(8vw, 3rem);
+  padding-right: max(8vw, 3rem);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ebe9e7 0%,
+      #e9ebee 38%,
+      #ebe8ea 67%,
+      #f0e9e3 100%
+    );
+}
+
+.yy-manifesto p {
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 0.22em 0;
+
+  font-family:
+    "Segoe UI Variable Display",
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  font-size: clamp(3rem, 5.2vw, 5.4rem);
+  line-height: 1.04;
+
+  font-weight: 520;
+  letter-spacing: -0.035em;
+
+  color: #1c1d22;
+
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.yy-manifesto p:nth-child(2) {
+  margin-left: 4vw;
+}
+
+.yy-manifesto p:nth-child(3) {
+  margin-left: 8vw;
+}
+
+
+/* ---------- Explore ---------- */
+.yy-explore {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f0e9e3 0%,
+      #f4f1ed 22%,
+      #f6f3ef 100%
+    );
+}
+
+.yy-explore h2,
+.yy-recent h2 {
+  margin: 0 0 3.6rem;
+
+  text-align: center;
+
+  font-size: clamp(2.5rem, 4.2vw, 4.25rem);
+  line-height: 1.08;
+
+  font-weight: 660;
+  letter-spacing: -0.04em;
+
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.yy-explore-grid {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.yy-world-card {
+  position: relative;
+
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 2.1rem;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.40),
+      rgba(255, 255, 255, 0.26)
+    );
+
+  border: 1px solid rgba(23, 24, 29, 0.07);
+  box-shadow: var(--yy-shadow-soft);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  color: #18191f !important;
+  text-decoration: none !important;
+
+  opacity: 0;
+  transform: translateY(26px);
+
+  transition:
+    opacity 0.88s ease,
+    transform 0.88s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.yy-world-card:hover {
+  transform:
+    translateY(-7px)
+    scale(1.012) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.56),
+      rgba(255, 255, 255, 0.29)
+    );
+
+  border-color:
+    rgba(23, 24, 29, 0.10);
+
+  box-shadow:
+    0 30px 80px rgba(28, 30, 36, 0.095);
+}
+.yy-world-card:nth-child(1):hover {
+  box-shadow:
+    0 30px 80px rgba(104, 120, 145, 0.12);
+}
+
+.yy-world-card:nth-child(2):hover {
+  box-shadow:
+    0 30px 80px rgba(168, 141, 119, 0.12);
+}
+
+.yy-world-card:nth-child(3):hover {
+  box-shadow:
+    0 30px 80px rgba(110, 111, 122, 0.10);
+}
+
+.yy-card-cn {
+  font-size: 2.1rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+.yy-card-en {
+  margin-top: 0.55rem;
+
+  color: #787b85;
+
+  font-size: 1rem;
+}
+
+.yy-card-arrow {
+  position: absolute;
+
+  top: 1.7rem;
+  right: 1.8rem;
+
+  font-size: 1.5rem;
+
+  transition: transform 0.28s ease;
+}
+
+.yy-world-card:hover .yy-card-arrow {
+  transform: translateX(4px);
+}
+
+
+/* ---------- Recent ---------- */
+.yy-recent {
+  align-items: center;
+  text-align: center;
+
+  background: #ece8e2;
+}
+
+.yy-empty-state {
+  color: #7a7d86;
+
+  font-size: 1.12rem;
+
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ---------- Reveal ---------- */
+.yy-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes yyAmbientFloatA {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(1.5%, -1.2%, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(-1.2%, 1.6%, 0) scale(1.02);
+  }
+}
+
+@keyframes yyAmbientFloatB {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-1.4%, 1%, 0) scale(1.03);
+  }
+
+  100% {
+    transform: translate3d(1.1%, -1.4%, 0) scale(1.05);
+  }
+}
+
+@keyframes yyScrollFloat {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(7px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 900px) {
+  .yy-hero {
+    padding: 6rem 1.4rem 5.5rem;
+  }
+
+  .yy-hero-content {
+    margin-top: -3vh;
+  }
+
+  .yy-hero h1 {
+    margin: 0 0 1.55rem 0;
+
+    font-size: clamp(3.5rem, 14vw, 5.3rem);
+    line-height: 1.06;
+
+    font-weight: 650;
+    letter-spacing: -0.04em;
+  }
+
+  .yy-hero-cn {
+    margin: 0 0 2.45rem 0;
+
+    font-size: clamp(1.12rem, 4.8vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+  .yy-hero-actions {
+    width: min(330px, 100%);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0.9rem;
+  }
+
+  .yy-btn {
+    min-height: 3.5rem;
+  }
+
+  .yy-section {
+    min-height: 72vh;
+    padding: 6rem 1.4rem;
+  }
+
+  .yy-philosophy p {
+    line-height: 1.26;
+  }
+
+  .yy-manifesto {
+    padding: 6rem 1.5rem;
+  }
+
+  .yy-manifesto p {
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 0.28em 0;
+
+  font-family:
+    "Segoe UI Variable Display",
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  font-size: clamp(3rem, 5.0vw, 5.2rem);
+  line-height: 1.06;
+
+  font-weight: 500;
+  letter-spacing: -0.03em;
+
+  color: #202126;
+
+  opacity: 0;
+
+  transform:
+    translate3d(0, 30px, 0)
+    scale(0.985);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+  .yy-manifesto p:nth-child(1) {
+  margin-left: 0;
+}
+
+.yy-manifesto p:nth-child(2) {
+  margin-left: 3.5vw;
+}
+
+.yy-manifesto p:nth-child(3) {
+  margin-left: 7vw;
+}
+
+  .yy-explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yy-world-card {
+    min-height: 220px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .yy-hero::before,
+  .yy-hero::after,
+  .yy-scroll-hint {
+    animation: none !important;
+  }
+
+  .yy-hero-content,
+  .yy-philosophy p,
+  .yy-manifesto p,
+  .yy-explore h2,
+  .yy-world-card,
+  .yy-recent h2,
+  .yy-empty-state {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .yy-btn,
+  .yy-world-card,
+  #nav {
+    transition: none !important;
+  }
+}
+/* =========================================================
+   SUBPAGES · Articles / Projects / Life / About
+   ========================================================= */
+
+/* 移除 Butterfly 默认页面白色卡片 */
+body:has(.yy-subpage) #content-inner,
+body:has(.yy-subpage) .layout {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body:has(.yy-subpage) #page {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+}
+
+
+/* ===== 内页整体 ===== */
+
+.yy-subpage {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f6f3ef 0%,
+      #f1ede8 100%
+    );
+
+  color: var(--yy-text);
+}
+
+
+/* ===== 内页 Hero ===== */
+
+.yy-subpage-hero {
+  min-height: 58vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding:
+    9rem
+    max(9vw, 2rem)
+    5.5rem;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* 微弱环境光 */
+
+.yy-subpage-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: -240px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 153, 174, 0.16),
+      rgba(181, 172, 190, 0.09) 44%,
+      transparent 70%
+    );
+
+  filter: blur(18px);
+
+  pointer-events: none;
+}
+
+
+/* 英文小标签 */
+
+.yy-subpage-label {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 1.4rem;
+
+  color: #80838c;
+
+  font-size: 0.82rem;
+
+  font-weight: 620;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* 中文标题 */
+
+.yy-subpage-hero h1 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  font-size:
+    clamp(4.5rem, 8vw, 7.2rem);
+
+  line-height: 0.98;
+
+  font-weight: 620;
+
+  letter-spacing: -0.055em;
+
+  color: #191a1f;
+}
+
+
+/* ===== 将来真正放内容的区域 ===== */
+
+.yy-subpage-content {
+  min-height: 48vh;
+
+  padding:
+    4rem
+    max(9vw, 2rem)
+    8rem;
+
+  background:
+    rgba(248, 246, 243, 0.66);
+}
+
+
+/* ===== 不同页面只做极细微色温区别 ===== */
+
+.yy-page-projects .yy-subpage-hero::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(130, 149, 174, 0.18),
+      transparent 68%
+    );
+}
+
+
+.yy-page-life .yy-subpage-hero::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(204, 181, 162, 0.18),
+      transparent 68%
+    );
+}
+
+
+.yy-page-about .yy-subpage-hero::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(176, 169, 184, 0.15),
+      transparent 68%
+    );
+}
+
+
+/* ===== Mobile ===== */
+
+@media (max-width: 900px) {
+
+  .yy-subpage-hero {
+    min-height: 50vh;
+
+    padding:
+      7rem
+      1.5rem
+      3.8rem;
+  }
+
+  .yy-subpage-hero h1 {
+    font-size:
+      clamp(3.7rem, 17vw, 5.4rem);
+  }
+
+  .yy-subpage-content {
+    padding:
+      3rem
+      1.5rem
+      6rem;
+  }
+}
+/* =========================================================
+   PAGE TRANSITION
+   ========================================================= */
+
+#body-wrap {
+  transition:
+    opacity 0.28s ease,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.28s ease;
+}
+
+
+/* 离开页面 */
+
+body.yy-page-leaving #body-wrap {
+  opacity: 0;
+
+  transform:
+    translateY(-7px)
+    scale(0.995);
+
+  filter: blur(2px);
+}
+
+
+/* 内页首次进入 */
+
+.yy-subpage-hero > * {
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.85s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+body.yy-page-ready
+.yy-subpage-hero > * {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+body.yy-page-ready
+.yy-subpage-label {
+  transition-delay: 80ms;
+}
+
+
+body.yy-page-ready
+.yy-subpage-hero h1 {
+  transition-delay: 150ms;
+}
+@media (prefers-reduced-motion: reduce) {
+
+  #body-wrap,
+  .yy-subpage-hero > * {
+    transition: none !important;
+  }
+
+  body.yy-page-leaving #body-wrap {
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    filter: none !important;
+  }
+
+}
+/* 手机端隐藏 Butterfly 右下角工具栏 */
+@media (max-width: 900px) {
+  #rightside {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+
+  .yy-manifesto {
+    min-height: 80vh;
+    padding: 5rem 1.5rem;
+  }
+
+  .yy-manifesto p {
+    font-size: clamp(2.35rem, 9.2vw, 3.35rem);
+    line-height: 1.08;
+
+    margin: 0.34em 0;
+
+    font-weight: 500;
+    letter-spacing: -0.028em;
+  }
+
+}
+/* =========================================================
+   SUBPAGE FIX
+   修复 Butterfly 默认页面标题与自定义 Hero 冲突
+   ========================================================= */
+
+/* 隐藏 Butterfly 自带页面标题 */
+body:has(.yy-subpage) #page > h1:first-child,
+body:has(.yy-subpage) #page > .page-title {
+  display: none !important;
+}
+
+
+/* 保证我们的内页正常显示 */
+.yy-subpage {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+}
+
+
+/* 内页 Hero */
+.yy-subpage-hero {
+  position: relative;
+
+  min-height: 56vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  padding:
+    8rem
+    max(9vw, 2rem)
+    5rem;
+
+  overflow: hidden;
+}
+
+
+/* 不再让标题因为 JS 状态失败而永久透明 */
+.yy-subpage-hero > * {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* 小英文标签 */
+.yy-subpage-label {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 1.4rem;
+
+  color: #858891;
+
+  font-size: 0.8rem;
+
+  font-weight: 620;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* 中文标题 */
+.yy-subpage-hero h1 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  font-size:
+    clamp(4.3rem, 8vw, 7rem);
+
+  line-height: 1;
+
+  font-weight: 620;
+
+  letter-spacing: -0.055em;
+
+  color: #191a1f;
+}
+@media (max-width: 900px) {
+
+  .yy-subpage-hero {
+    min-height: 46vh;
+
+    justify-content: flex-end;
+
+    padding:
+      7rem
+      1.5rem
+      3.5rem;
+  }
+
+  .yy-subpage-label {
+    margin-bottom: 1rem;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .yy-subpage-hero h1 {
+    font-size:
+      clamp(3.2rem, 15vw, 4.6rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+  }
+
+  .yy-subpage-content {
+    min-height: 45vh;
+
+    padding:
+      3rem
+      1.5rem
+      6rem;
+  }
+
+}
+body.yy-page-ready .yy-subpage-label {
+  animation:
+    yySubpageEnter 0.7s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+body.yy-page-ready .yy-subpage-hero h1 {
+  animation:
+    yySubpageEnter 0.85s
+    0.08s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+@keyframes yySubpageEnter {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}

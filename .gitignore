@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+# YYYangMike local backups
+*.backup
+source/css/*.before-cleanup.css
+source/css/*.phase*-backup.css
+source/js/*.phase*-backup.js
