@@ -1,6 +1,7 @@
 ---
 title:
 date: 2026-09-27
+description: '写代码，也记录生活。记录项目、学习、成长，以及我真正想要的生活。'
 comments: false
 aside: false
 top_img: false

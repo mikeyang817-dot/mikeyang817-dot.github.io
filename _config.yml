@@ -5,8 +5,15 @@
 # Site
 title: YYYangMike
 subtitle: ''
-description: 写代码，也记录生活。
+description: 'YYYangMike 的个人博客，记录代码、项目、学习与生活，也记录对真正想要生活的选择。'
 keywords:
+  - YYYangMike
+  - 个人博客
+  - 技术
+  - 编程
+  - 项目
+  - 学习
+  - 生活记录
 author: YYYangMike
 language: zh-CN
 timezone: Asia/Shanghai

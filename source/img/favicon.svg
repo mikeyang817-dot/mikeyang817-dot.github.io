@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect
+    width="128"
+    height="128"
+    rx="30"
+    fill="#F4F1ED"
+  />
+
+  <text
+    x="64"
+    y="77"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="47"
+    font-weight="700"
+    letter-spacing="-3"
+    fill="#18191F"
+  >YM</text>
+</svg>
