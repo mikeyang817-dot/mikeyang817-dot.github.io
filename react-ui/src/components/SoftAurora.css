@@ -1,17 +1,4 @@
-<SoftAurora
-  speed={0.42}
-  scale={1.55}
-  brightness={0.82}
-  color1="#e7ddef"
-  color2="#d6e5ee"
-  noiseFrequency={2.5}
-  noiseAmplitude={0.95}
-  bandHeight={0.46}
-  bandSpread={1.28}
-  octaveDecay={0.16}
-  layerOffset={0.65}
-  colorSpeed={0.65}
-  enableMouseInteraction={true}
-  mouseInfluence={0.16}
-  lightMode={true}
-/>
+.soft-aurora-container {
+  width: 100%;
+  height: 100%;
+}
