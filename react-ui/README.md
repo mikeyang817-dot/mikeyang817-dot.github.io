@@ -1,16 +1,35 @@
-# React + Vite
+﻿# YYYangMike React UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是 YYYangMike 个人博客目前正式使用的前端版本。
 
-Currently, two official plugins are available:
+主要页面包括：
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 首页
+- 文章
+- 项目
+- 生活
+- 相册
+- 关于
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Motion
+- GSAP
+- OGL
 
-## Expanding the ESLint configuration
+## 本地运行
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npm install
+npm run dev
+
+## 构建
+
+npm run build
+
+网站通过 GitHub Pages 自动部署。
+
+在线访问：
+
+https://mikeyang817-dot.github.io/
