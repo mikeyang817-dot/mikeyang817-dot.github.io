@@ -1,0 +1,1312 @@
+/* =========================================================
+   Gallery v5 — light decorative accents in whitespace
+   ========================================================= */
+
+.yy-gallery-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 132px 0 100px;
+  color: #18191d;
+  background:
+    radial-gradient(circle at 10% 4%, rgba(198, 214, 239, 0.34), transparent 28%),
+    radial-gradient(circle at 90% 9%, rgba(236, 216, 208, 0.28), transparent 26%),
+    linear-gradient(180deg, #f8f7f4 0%, #f2f1ef 58%, #eceef1 100%);
+}
+
+.yy-gallery-hero,
+.yy-gallery-content {
+  width: min(1360px, 88vw);
+  margin: 0 auto;
+}
+
+.yy-gallery-floating-back {
+  position: fixed;
+  top: 96px;
+  left: 6vw;
+  z-index: 9998;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.66rem 0.95rem;
+
+  border: 1px solid rgba(28, 31, 38, 0.09);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 10px 28px rgba(31, 36, 48, 0.07);
+
+  color: rgba(24, 25, 29, 0.72);
+  font-size: 0.84rem;
+  text-decoration: none;
+
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+}
+
+.yy-gallery-hero {
+  padding: 7vh 0 7vh;
+}
+
+.yy-gallery-hero-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: clamp(3rem, 6vw, 5.5rem);
+}
+
+.yy-gallery-eyebrow {
+  color: rgba(30, 32, 38, 0.38);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.yy-gallery-hero h1 {
+  margin: 0;
+  max-width: 900px;
+  font-size: clamp(4rem, 8.5vw, 8rem);
+  font-weight: 570;
+  line-height: 0.94;
+  letter-spacing: -0.07em;
+}
+
+.yy-gallery-intro-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+
+  border-top: 1px solid rgba(28, 31, 38, 0.1);
+}
+
+.yy-gallery-intro-row p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(27, 29, 34, 0.58);
+  font-size: clamp(0.98rem, 1.4vw, 1.12rem);
+  line-height: 1.9;
+}
+
+.yy-gallery-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.yy-gallery-count strong {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 520;
+  letter-spacing: -0.05em;
+}
+
+.yy-gallery-count span {
+  color: rgba(30, 32, 38, 0.4);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   Time bands
+   ========================================================= */
+
+.yy-gallery-content {
+  padding: 2vh 0 8vh;
+}
+
+.yy-gallery-timebands {
+  display: grid;
+  gap: clamp(3.2rem, 6vw, 6rem);
+}
+
+.yy-gallery-timeband {
+  position: relative;
+  min-width: 0;
+}
+
+.yy-gallery-timeband > :not(.yy-gallery-accent) {
+  position: relative;
+  z-index: 1;
+}
+
+.yy-gallery-band-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  min-height: 34px;
+
+  margin-bottom: clamp(1.1rem, 2vw, 1.8rem);
+  padding-bottom: 0.72rem;
+
+  border-bottom: 1px solid rgba(30, 32, 38, 0.07);
+}
+
+.yy-gallery-band-copy {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.yy-gallery-year {
+  color: rgba(22, 24, 29, 0.72);
+  font-size: clamp(1.7rem, 2.5vw, 2.45rem);
+  font-weight: 520;
+  letter-spacing: -0.045em;
+}
+
+.yy-gallery-band-range {
+  color: rgba(29, 31, 37, 0.36);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.yy-gallery-masonry {
+  column-count: 3;
+  column-gap: clamp(1.45rem, 2.1vw, 2.15rem);
+}
+
+.yy-gallery-masonry-pattern-1 {
+  column-gap: clamp(1.6rem, 2.35vw, 2.35rem);
+}
+
+.yy-gallery-masonry-pattern-2 {
+  column-gap: clamp(1.35rem, 1.9vw, 1.95rem);
+}
+
+.yy-gallery-flow-item {
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  margin: 0 0 clamp(1.35rem, 2.2vw, 2.2rem);
+}
+
+
+/* =========================================================
+   Frames
+   ========================================================= */
+
+.yy-gallery-photo-card {
+  appearance: none;
+  display: block;
+  width: 100%;
+
+  padding: clamp(0.3rem, 0.48vw, 0.44rem);
+
+  border: 1px solid rgba(34, 37, 44, 0.055);
+  border-radius: 3px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 15px 34px rgba(32, 36, 46, 0.065),
+    0 2px 5px rgba(32, 36, 46, 0.022);
+
+  text-align: left;
+  cursor: zoom-in;
+
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.42s ease;
+}
+
+.yy-gallery-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 26px 58px rgba(32, 36, 46, 0.11),
+    0 3px 7px rgba(32, 36, 46, 0.035);
+}
+
+.yy-gallery-photo-card.size-landscape-normal {
+  width: 100%;
+}
+
+.yy-gallery-photo-card.size-landscape-prominent {
+  width: 105%;
+  margin-left: -2.5%;
+}
+
+.yy-gallery-photo-card.size-portrait-medium {
+  width: 88%;
+  margin-left: 6%;
+}
+
+.yy-gallery-photo-card.size-portrait-compact {
+  width: 79%;
+  margin-left: 10.5%;
+}
+
+.yy-gallery-photo-card.size-square-normal {
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+.yy-gallery-photo-card.size-square-medium {
+  width: 100%;
+}
+
+.yy-gallery-mat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: clamp(0.12rem, 0.22vw, 0.22rem);
+
+  background: #fefefd;
+}
+
+.yy-gallery-mat img {
+  display: block;
+
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #f5f5f3;
+}
+
+.yy-gallery-photo-card.is-portrait .yy-gallery-mat img {
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+}
+
+.yy-gallery-photo-card.size-portrait-compact .yy-gallery-mat img {
+  max-height: 510px;
+}
+
+.yy-gallery-photo-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 0.48rem 0.28rem 0.06rem;
+}
+
+.yy-gallery-photo-number,
+.yy-gallery-photo-date {
+  color: rgba(27, 29, 34, 0.37);
+  font-size: 0.63rem;
+  font-weight: 600;
+}
+
+.yy-gallery-photo-number {
+  letter-spacing: 0.11em;
+}
+
+.yy-gallery-photo-date {
+  letter-spacing: 0.025em;
+}
+
+
+/* =========================================================
+   Small floating accents
+   只做“插空点缀”，放在 timeband 背后，碰到图就自然被遮住
+   ========================================================= */
+
+.yy-gallery-accent {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.62;
+  filter: saturate(108%);
+}
+
+.yy-gallery-accent.pos-left-top {
+  left: 5%;
+  top: 20%;
+}
+
+.yy-gallery-accent.pos-mid-soft {
+  left: 47%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+}
+
+.yy-gallery-accent.pos-right-top {
+  right: 6%;
+  top: 24%;
+}
+
+.yy-gallery-accent.pos-left-lower {
+  left: 11%;
+  bottom: 17%;
+}
+
+.yy-gallery-accent.pos-right-soft {
+  right: 18%;
+  top: 48%;
+}
+
+.yy-gallery-accent.pos-right-lower {
+  right: 9%;
+  bottom: 15%;
+}
+
+.yy-gallery-accent.pos-left-soft {
+  left: 18%;
+  top: 42%;
+}
+
+/* flower */
+
+.yy-accent-flower {
+  width: 28px;
+  height: 28px;
+}
+
+.yy-accent-flower .petal {
+  position: absolute;
+  left: 10px;
+  top: 0;
+
+  width: 9px;
+  height: 14px;
+  border-radius: 60%;
+
+  background: rgba(223, 145, 171, 0.76);
+  transform-origin: 4.5px 13px;
+}
+
+.yy-accent-flower .p2 { transform: rotate(72deg); }
+.yy-accent-flower .p3 { transform: rotate(144deg); }
+.yy-accent-flower .p4 { transform: rotate(216deg); }
+.yy-accent-flower .p5 { transform: rotate(288deg); }
+
+.yy-accent-flower > i {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  background: rgba(240, 197, 89, 0.88);
+}
+
+/* rainbow */
+
+.yy-accent-rainbow {
+  width: 40px;
+  height: 22px;
+}
+
+.yy-accent-rainbow .arc {
+  position: absolute;
+  left: 50%;
+  border-radius: 999px 999px 0 0;
+  transform: translateX(-50%);
+}
+
+.yy-accent-rainbow .a1 {
+  bottom: 0;
+  width: 40px;
+  height: 22px;
+  border: 4px solid rgba(241, 177, 153, 0.72);
+  border-bottom: 0;
+}
+
+.yy-accent-rainbow .a2 {
+  bottom: 0;
+  width: 30px;
+  height: 17px;
+  border: 4px solid rgba(199, 211, 246, 0.82);
+  border-bottom: 0;
+}
+
+.yy-accent-rainbow .a3 {
+  bottom: 0;
+  width: 20px;
+  height: 12px;
+  border: 4px solid rgba(241, 230, 176, 0.82);
+  border-bottom: 0;
+}
+
+/* gull */
+
+.yy-accent-gull {
+  width: 52px;
+  height: 22px;
+}
+
+.yy-accent-gull svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(88, 111, 142, 0.62);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* wave */
+
+.yy-accent-wave {
+  width: 54px;
+  height: 20px;
+}
+
+.yy-accent-wave svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(112, 156, 212, 0.58);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+/* bear */
+
+.yy-accent-bear {
+  width: 28px;
+  height: 26px;
+}
+
+.yy-accent-bear .ear {
+  position: absolute;
+  top: 0;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(191, 145, 88, 0.8);
+}
+
+.yy-accent-bear .e1 { left: 4px; }
+.yy-accent-bear .e2 { right: 4px; }
+
+.yy-accent-bear .face {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 46%;
+  background: rgba(209, 163, 94, 0.82);
+}
+
+.yy-accent-bear .eye {
+  position: absolute;
+  top: 7px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(74, 56, 41, 0.72);
+}
+
+.yy-accent-bear .eye1 { left: 5px; }
+.yy-accent-bear .eye2 { right: 5px; }
+
+.yy-accent-bear .nose {
+  position: absolute;
+  left: 8px;
+  top: 11px;
+  width: 4px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(74, 56, 41, 0.76);
+}
+
+/* night */
+
+.yy-accent-night {
+  width: 44px;
+  height: 24px;
+}
+
+.yy-accent-night .moon {
+  position: absolute;
+  left: 0;
+  top: 2px;
+
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  background: rgba(245, 222, 162, 0.88);
+  box-shadow: 5px -1px 0 0 #f3f2ef;
+}
+
+.yy-accent-night .star {
+  position: absolute;
+  color: rgba(136, 123, 188, 0.64);
+  line-height: 1;
+}
+
+.yy-accent-night .s1 {
+  right: 9px;
+  top: 0;
+  font-size: 0.62rem;
+}
+
+.yy-accent-night .s2 {
+  right: 0;
+  top: 9px;
+  font-size: 0.46rem;
+}
+
+.yy-accent-night .s3 {
+  right: 15px;
+  bottom: 0;
+  font-size: 0.42rem;
+}
+
+
+/* =========================================================
+   Header mini decoration
+   ========================================================= */
+
+.yy-band-mini-decor {
+  position: relative;
+  flex: 0 0 auto;
+
+  width: 48px;
+  height: 32px;
+
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.yy-band-mini-flower {
+  width: 34px;
+  height: 34px;
+}
+
+.yy-band-mini-flower .petal {
+  position: absolute;
+  left: 12px;
+  top: 1px;
+
+  width: 11px;
+  height: 17px;
+
+  border-radius: 60%;
+
+  background: rgba(224, 139, 164, 0.78);
+
+  transform-origin: 5.5px 16px;
+}
+
+.yy-band-mini-flower .p2 { transform: rotate(72deg); }
+.yy-band-mini-flower .p3 { transform: rotate(144deg); }
+.yy-band-mini-flower .p4 { transform: rotate(216deg); }
+.yy-band-mini-flower .p5 { transform: rotate(288deg); }
+
+.yy-band-mini-flower > i {
+  position: absolute;
+  left: 13px;
+  top: 13px;
+
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+
+  background: rgba(240, 190, 89, 0.92);
+}
+
+.yy-band-mini-gull {
+  width: 64px;
+  height: 28px;
+}
+
+.yy-band-mini-gull svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+  stroke: rgba(75, 98, 124, 0.62);
+  stroke-width: 2.7;
+  stroke-linecap: round;
+}
+
+.yy-band-mini-night .moon {
+  position: absolute;
+  left: 4px;
+  top: 2px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+  background: rgba(247, 220, 151, 0.88);
+  box-shadow: 7px -2px 0 0 #f3f2ef;
+}
+
+.yy-band-mini-night .star {
+  position: absolute;
+  color: rgba(116, 104, 170, 0.62);
+}
+
+.yy-band-mini-night .s1 {
+  right: 6px;
+  top: 0;
+  font-size: 0.72rem;
+}
+
+.yy-band-mini-night .s2 {
+  right: 0;
+  bottom: 1px;
+  font-size: 0.52rem;
+}
+
+.yy-band-mini-bear {
+  width: 35px;
+  height: 32px;
+}
+
+.yy-band-mini-bear .ear {
+  position: absolute;
+  top: 0;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  background: rgba(190, 142, 79, 0.8);
+}
+
+.yy-band-mini-bear .e1 { left: 4px; }
+.yy-band-mini-bear .e2 { right: 4px; }
+
+.yy-band-mini-bear .face {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+
+  width: 26px;
+  height: 25px;
+
+  border-radius: 48%;
+  background: rgba(209, 163, 94, 0.84);
+}
+
+.yy-band-mini-bear .eye {
+  position: absolute;
+  top: 9px;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+  background: rgba(72, 55, 39, 0.78);
+}
+
+.yy-band-mini-bear .eye1 { left: 7px; }
+.yy-band-mini-bear .eye2 { right: 7px; }
+
+.yy-band-mini-bear .nose {
+  position: absolute;
+  left: 11px;
+  top: 14px;
+
+  width: 4px;
+  height: 3px;
+
+  border-radius: 50%;
+  background: rgba(72, 55, 39, 0.8);
+}
+
+
+/* =========================================================
+   Status + Lightbox
+   ========================================================= */
+
+.yy-gallery-state {
+  display: grid;
+  gap: 0.55rem;
+  min-height: 36vh;
+  place-content: center;
+  text-align: center;
+  color: rgba(30, 32, 38, 0.5);
+}
+
+.yy-gallery-warning {
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1rem;
+
+  border: 1px solid rgba(174, 119, 75, 0.18);
+  border-radius: 16px;
+
+  background: rgba(255, 247, 237, 0.72);
+
+  color: rgba(112, 71, 40, 0.78);
+  font-size: 0.88rem;
+}
+
+.yy-gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 3vh 5vw;
+
+  background: rgba(7, 9, 13, 0.94);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.yy-lightbox-stage {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(84vw, 1500px);
+  height: 88vh;
+}
+
+.yy-lightbox-stage img {
+  display: block;
+
+  max-width: 100%;
+  max-height: calc(88vh - 54px);
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+}
+
+.yy-lightbox-meta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+}
+
+.yy-lightbox-close,
+.yy-lightbox-nav {
+  position: absolute;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.yy-lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  font-size: 1.6rem;
+}
+
+.yy-lightbox-nav {
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.yy-lightbox-prev { left: 1.6rem; }
+.yy-lightbox-next { right: 1.6rem; }
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .yy-gallery-masonry {
+    column-count: 2;
+  }
+
+  .yy-gallery-photo-card.size-portrait-compact {
+    width: 84%;
+    margin-left: 8%;
+  }
+
+  .yy-gallery-accent {
+    opacity: 0.5;
+    transform: scale(0.94);
+  }
+}
+
+@media (max-width: 640px) {
+  .yy-gallery-page {
+    padding-top: 108px;
+  }
+
+  .yy-gallery-hero,
+  .yy-gallery-content {
+    width: 90vw;
+  }
+
+  .yy-gallery-floating-back {
+    top: 78px;
+    left: 5vw;
+  }
+
+  .yy-gallery-hero h1 {
+    font-size: clamp(3.6rem, 18vw, 5.7rem);
+  }
+
+  .yy-gallery-intro-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .yy-gallery-band-head {
+    align-items: center;
+  }
+
+  .yy-gallery-year {
+    font-size: 1.55rem;
+  }
+
+  .yy-gallery-masonry {
+    column-count: 1;
+  }
+
+  .yy-gallery-photo-card.size-landscape-prominent,
+  .yy-gallery-photo-card.size-landscape-normal,
+  .yy-gallery-photo-card.size-portrait-medium,
+  .yy-gallery-photo-card.size-portrait-compact,
+  .yy-gallery-photo-card.size-square-medium,
+  .yy-gallery-photo-card.size-square-normal {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .yy-gallery-photo-card.is-portrait .yy-gallery-mat img,
+  .yy-gallery-photo-card.size-portrait-compact .yy-gallery-mat img {
+    max-height: none;
+  }
+
+  .yy-gallery-accent {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   v6 FIX — Make decorative accents actually visible
+   原因：v5 把装饰放在整个 timeband 的背景层，常被照片覆盖。
+   现在改为挂在单张照片卡片的“间隙边缘”，尺寸小、不单独占版面。
+   ========================================================= */
+
+.yy-gallery-flow-item {
+  position: relative;
+  overflow: visible;
+}
+
+/* 禁用 v5 的 timeband 背景装饰定位，不再使用 */
+.yy-gallery-timeband > .yy-gallery-accent {
+  display: none !important;
+}
+
+/* 真正显示的小装饰：只占用照片之间原本就存在的 margin 空隙 */
+.yy-gallery-accent.yy-gap-accent {
+  display: block !important;
+  position: absolute;
+  z-index: 3;
+
+  width: auto;
+  height: auto;
+
+  opacity: 0.72;
+  pointer-events: none;
+
+  filter:
+    saturate(108%)
+    drop-shadow(0 4px 10px rgba(45, 53, 70, 0.05));
+}
+
+.yy-gap-accent-left {
+  left: 7px;
+  bottom: -20px;
+}
+
+.yy-gap-accent-right {
+  right: 7px;
+  bottom: -20px;
+}
+
+/* 每种元素都只保持“点缀级”大小 */
+.yy-gap-accent.yy-accent-flower {
+  width: 29px;
+  height: 29px;
+}
+
+.yy-gap-accent.yy-accent-gull {
+  width: 55px;
+  height: 24px;
+}
+
+.yy-gap-accent.yy-accent-night {
+  width: 45px;
+  height: 25px;
+}
+
+.yy-gap-accent.yy-accent-bear {
+  width: 29px;
+  height: 27px;
+}
+
+.yy-gap-accent.yy-accent-rainbow {
+  width: 42px;
+  height: 23px;
+}
+
+.yy-gap-accent.yy-accent-wave {
+  width: 58px;
+  height: 22px;
+}
+
+/* 照片之间原本已有 1.35~2.2rem 的底部空隙，所以无需额外拉开布局 */
+.yy-gallery-flow-item {
+  margin-bottom: clamp(1.55rem, 2.35vw, 2.35rem);
+}
+
+/* 手机端继续隐藏这些点缀，避免小屏拥挤 */
+@media (max-width: 640px) {
+  .yy-gallery-accent.yy-gap-accent {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   v7 — Larger accents for genuine wide whitespace
+   保留 v6 的小点缀；这里只额外增加少量更醒目的大装饰。
+   不参与布局，不增加额外空白，只悬浮在 timeband 的空白区。
+   ========================================================= */
+
+.yy-gallery-accent.yy-large-accent {
+  display: block !important;
+  position: absolute;
+  z-index: 2;
+
+  pointer-events: none;
+
+  opacity: 0.84;
+  filter:
+    saturate(132%)
+    drop-shadow(0 8px 18px rgba(54, 64, 86, 0.07));
+}
+
+/* 位置都避开时间标题和主要照片区域，尽量落在大留白里 */
+.yy-large-accent-right-lower {
+  right: 5%;
+  bottom: 7%;
+}
+
+.yy-large-accent-left-mid {
+  left: 4%;
+  top: 48%;
+}
+
+.yy-large-accent-right-mid {
+  right: 8%;
+  top: 50%;
+}
+
+.yy-large-accent-left-lower {
+  left: 8%;
+  bottom: 8%;
+}
+
+.yy-large-accent-center-lower {
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+}
+
+/* Flower */
+.yy-large-accent.yy-accent-flower {
+  width: 62px;
+  height: 62px;
+}
+
+.yy-large-accent.yy-accent-flower .petal {
+  left: 22px;
+  top: 1px;
+  width: 18px;
+  height: 30px;
+  background: rgba(236, 92, 137, 0.9);
+  transform-origin: 9px 29px;
+}
+
+.yy-large-accent.yy-accent-flower > i {
+  left: 22px;
+  top: 22px;
+  width: 18px;
+  height: 18px;
+  background: rgba(255, 193, 46, 0.98);
+}
+
+/* Rainbow */
+.yy-large-accent.yy-accent-rainbow {
+  width: 92px;
+  height: 50px;
+}
+
+.yy-large-accent.yy-accent-rainbow .a1 {
+  width: 92px;
+  height: 50px;
+  border-width: 8px;
+  border-color: rgba(247, 121, 117, 0.9);
+  border-bottom: 0;
+}
+
+.yy-large-accent.yy-accent-rainbow .a2 {
+  width: 70px;
+  height: 39px;
+  border-width: 8px;
+  border-color: rgba(104, 176, 245, 0.9);
+  border-bottom: 0;
+}
+
+.yy-large-accent.yy-accent-rainbow .a3 {
+  width: 47px;
+  height: 27px;
+  border-width: 8px;
+  border-color: rgba(246, 207, 75, 0.92);
+  border-bottom: 0;
+}
+
+/* Gull */
+.yy-large-accent.yy-accent-gull {
+  width: 118px;
+  height: 50px;
+}
+
+.yy-large-accent.yy-accent-gull svg {
+  stroke: rgba(55, 105, 168, 0.82);
+  stroke-width: 3.4;
+}
+
+/* Wave */
+.yy-large-accent.yy-accent-wave {
+  width: 120px;
+  height: 42px;
+}
+
+.yy-large-accent.yy-accent-wave svg {
+  stroke: rgba(60, 155, 226, 0.8);
+  stroke-width: 3.2;
+}
+
+/* Bear */
+.yy-large-accent.yy-accent-bear {
+  width: 62px;
+  height: 58px;
+}
+
+.yy-large-accent.yy-accent-bear .ear {
+  width: 18px;
+  height: 18px;
+  background: rgba(192, 122, 48, 0.9);
+}
+
+.yy-large-accent.yy-accent-bear .e1 {
+  left: 8px;
+}
+
+.yy-large-accent.yy-accent-bear .e2 {
+  right: 8px;
+}
+
+.yy-large-accent.yy-accent-bear .face {
+  left: 8px;
+  top: 9px;
+  width: 46px;
+  height: 45px;
+  background: rgba(232, 167, 63, 0.92);
+}
+
+.yy-large-accent.yy-accent-bear .eye {
+  top: 16px;
+  width: 3px;
+  height: 3px;
+  background: rgba(78, 49, 29, 0.9);
+}
+
+.yy-large-accent.yy-accent-bear .eye1 {
+  left: 13px;
+}
+
+.yy-large-accent.yy-accent-bear .eye2 {
+  right: 13px;
+}
+
+.yy-large-accent.yy-accent-bear .nose {
+  left: 20px;
+  top: 26px;
+  width: 7px;
+  height: 5px;
+  background: rgba(78, 49, 29, 0.92);
+}
+
+/* Moon + stars */
+.yy-large-accent.yy-accent-night {
+  width: 92px;
+  height: 58px;
+}
+
+.yy-large-accent.yy-accent-night .moon {
+  left: 4px;
+  top: 4px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 211, 84, 0.94);
+  box-shadow: 12px -3px 0 0 #f3f2ef;
+}
+
+.yy-large-accent.yy-accent-night .s1 {
+  right: 21px;
+  top: 1px;
+  font-size: 1.05rem;
+  color: rgba(118, 88, 207, 0.88);
+}
+
+.yy-large-accent.yy-accent-night .s2 {
+  right: 3px;
+  top: 23px;
+  font-size: 0.8rem;
+  color: rgba(93, 143, 221, 0.86);
+}
+
+.yy-large-accent.yy-accent-night .s3 {
+  right: 31px;
+  bottom: 1px;
+  font-size: 0.68rem;
+  color: rgba(219, 118, 180, 0.84);
+}
+
+/* 避免在较窄屏幕抢占视觉 */
+@media (max-width: 1050px) {
+  .yy-gallery-accent.yy-large-accent {
+    transform: scale(0.86);
+    opacity: 0.72;
+  }
+
+  .yy-large-accent-center-lower {
+    transform: translateX(-50%) scale(0.86);
+  }
+}
+
+@media (max-width: 760px) {
+  .yy-gallery-accent.yy-large-accent {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   v8 — React Bits SoftAurora dynamic background
+   轻、慢、低对比，不抢照片
+   ========================================================= */
+
+.yy-gallery-page {
+  isolation: isolate;
+}
+
+.yy-gallery-dynamic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.42;
+}
+
+.yy-gallery-dynamic-bg > * {
+  width: 100%;
+  height: 100%;
+}
+
+.yy-gallery-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248, 247, 244, 0.46) 0%,
+      rgba(244, 243, 241, 0.28) 45%,
+      rgba(239, 241, 244, 0.40) 100%
+    );
+}
+
+/* 让装饰元素有非常轻的漂浮感 */
+.yy-gallery-accent.yy-gap-accent,
+.yy-gallery-accent.yy-large-accent,
+.yy-band-mini-decor {
+  animation: yy-gallery-float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.yy-gallery-accent.yy-gap-accent:nth-of-type(2n),
+.yy-gallery-accent.yy-large-accent:nth-of-type(2n),
+.yy-band-mini-decor:nth-of-type(2n) {
+  animation-delay: -2.2s;
+}
+
+@keyframes yy-gallery-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+/* 尊重系统减少动态偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .yy-gallery-accent.yy-gap-accent,
+  .yy-gallery-accent.yy-large-accent,
+  .yy-band-mini-decor {
+    animation: none;
+  }
+
+  .yy-gallery-dynamic-bg {
+    opacity: 0.25;
+  }
+}

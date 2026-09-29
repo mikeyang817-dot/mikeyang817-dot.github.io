@@ -1,0 +1,1533 @@
+/* =========================================================
+   YYYangMike React UI
+   Clean App.css
+   ========================================================= */
+
+
+/* =========================================================
+   0. Root / Global
+   ========================================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.yy-home-demo,
+.yy-home-demo *,
+.yy-home-demo *::before,
+.yy-home-demo *::after {
+  box-sizing: border-box;
+}
+
+.yy-home-demo {
+  position: relative;
+
+  width: 100%;
+  min-height: 300vh;
+
+  margin: 0;
+
+  background: #f4f1ec;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   1. React Bits Soft Aurora Background
+   ========================================================= */
+
+.yy-aurora-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  overflow: hidden;
+}
+
+.yy-aurora-bg .soft-aurora-container {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.yy-aurora-bg canvas {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* =========================================================
+   2. First Scene — Hero
+   ========================================================= */
+
+.yy-hero-demo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  transform: translateY(-4vh);
+}
+
+
+/* ---------- Main title ---------- */
+
+.yy-demo-title {
+  margin: 0;
+
+  padding: 0.12em 0.08em 0.2em;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(4.2rem, 9vw, 8.5rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.06em;
+
+  color: #17171a;
+
+  overflow: visible !important;
+}
+
+
+/* ---------- Subtitle ---------- */
+
+.yy-demo-subtitle {
+  margin: 1.2rem 0 0;
+
+  display: flex;
+  justify-content: center;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+
+  color: rgba(35, 35, 40, 0.68);
+}
+
+
+/* ---------- Hero buttons ---------- */
+
+.yy-demo-actions {
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.yy-demo-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  min-height: 48px;
+
+  padding: 0.85rem 1.35rem;
+
+  border-radius: 999px;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.yy-demo-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ---------- Primary button ---------- */
+
+.yy-demo-btn-primary {
+  color: #f8f8f8;
+
+  background: #1c1c1f;
+
+  box-shadow:
+    0 10px 30px rgba(20, 20, 24, 0.14);
+}
+
+.yy-demo-btn-primary:hover {
+  background: #111114;
+
+  box-shadow:
+    0 14px 36px rgba(20, 20, 24, 0.18);
+}
+
+
+/* ---------- Secondary button ---------- */
+
+.yy-demo-btn-secondary {
+  color: #252529;
+
+  background: rgba(255, 255, 255, 0.48);
+
+  border: 1px solid rgba(30, 30, 35, 0.1);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.yy-demo-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.72);
+
+  border-color: rgba(30, 30, 35, 0.16);
+}
+
+
+/* =========================================================
+   3. React Bits Button Effects
+   Magnet + GlareHover
+   ========================================================= */
+
+.yy-glare-button {
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.yy-glare-primary {
+  box-shadow:
+    0 10px 30px rgba(20, 20, 24, 0.14);
+}
+
+.yy-glare-primary:hover {
+  box-shadow:
+    0 16px 38px rgba(20, 20, 24, 0.19);
+}
+
+.yy-glare-secondary {
+  box-shadow:
+    0 8px 24px rgba(30, 30, 35, 0.05);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* GlareHover controls the visible button background */
+
+.yy-glare-button .yy-demo-btn {
+  position: relative;
+  z-index: 1;
+
+  background: transparent !important;
+
+  border: 0 !important;
+
+  box-shadow: none !important;
+}
+
+
+/* Avoid hover transform fighting with Magnet */
+
+.yy-glare-button .yy-demo-btn:hover {
+  transform: none;
+
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   4. Second Scene — Philosophy
+   人生不过三万天
+   ========================================================= */
+
+.yy-philosophy-demo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 8vw;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(244, 241, 236, 0) 0%,
+      rgba(240, 239, 242, 0.38) 45%,
+      rgba(232, 236, 240, 0.72) 100%
+    );
+}
+
+.yy-philosophy-text {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  font-size: clamp(2.4rem, 5.2vw, 5rem);
+  font-weight: 500;
+  line-height: 1.55;
+
+  color: #202126;
+
+  text-align: center;
+}
+
+
+/* ---------- Wave text rows ---------- */
+
+.yy-philosophy-line {
+  display: flex;
+
+  align-items: baseline;
+  justify-content: center;
+
+  white-space: nowrap;
+}
+
+.yy-wave-char {
+  display: inline-block;
+
+  margin-right: 0.09em;
+
+  will-change: transform, opacity;
+}
+
+.yy-wave-char:last-child {
+  margin-right: 0;
+}
+
+
+/* =========================================================
+   5. Third Scene — Manifesto
+   Build / Record / Stay
+   ========================================================= */
+
+.yy-manifesto-demo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 8vh 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(232, 236, 240, 0.72) 0%,
+      rgba(239, 235, 232, 0.5) 52%,
+      rgba(244, 241, 236, 0.82) 100%
+    );
+}
+
+
+/*
+   Desktop composition:
+
+   Build things.
+
+        Record life.
+
+             Stay curious.
+
+   Everything stays on the left half.
+   Right side remains deliberately empty.
+*/
+
+.yy-manifesto-inner {
+  width: 50vw;
+  max-width: 900px;
+
+  margin-left: 8vw;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 3rem;
+}
+
+.yy-manifesto-line {
+  margin: 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(3.5rem, 4.8vw, 5.5rem);
+  font-weight: 560;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+
+  color: #17181c;
+
+  white-space: nowrap;
+
+  will-change: transform, opacity;
+}
+
+
+/* First line — farthest left */
+
+.yy-manifesto-line-1 {
+  align-self: flex-start;
+
+  margin-left: 0;
+}
+
+
+/* Second line — moves right */
+
+.yy-manifesto-line-2 {
+  align-self: flex-start;
+
+  margin-left: 4vw;
+}
+
+
+/* Third line — continues farther right */
+
+.yy-manifesto-line-3 {
+  align-self: flex-start;
+
+  margin-left: 8vw;
+}
+
+/* =========================================================
+   6. Fourth Scene — Explore My World
+   ========================================================= */
+
+.yy-explore-demo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 10vh 8vw;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(244, 241, 236, 0.82) 0%,
+      rgba(239, 238, 242, 0.72) 48%,
+      rgba(238, 240, 242, 0.88) 100%
+    );
+}
+
+
+/* ---------- Heading ---------- */
+
+.yy-explore-heading {
+  width: min(1240px, 100%);
+
+  margin: 0 auto 4.5rem;
+}
+
+.yy-explore-kicker {
+  display: block;
+
+  margin-bottom: 0.9rem;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+
+  color: rgba(35, 36, 42, 0.42);
+}
+
+.yy-explore-heading h2 {
+  margin: 0;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+
+  color: #1b1c20;
+}
+
+
+/* ---------- Card grid ---------- */
+
+.yy-explore-grid {
+  width: min(1240px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.4rem;
+}
+
+
+/* ---------- React Bits Spotlight cards ---------- */
+
+.yy-explore-card.card-spotlight {
+  min-height: 310px;
+
+  padding: 0;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(30, 32, 38, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.52);
+
+  box-shadow:
+    0 16px 50px rgba(28, 31, 38, 0.055);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.yy-explore-card.card-spotlight:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(30, 32, 38, 0.13);
+
+  box-shadow:
+    0 24px 60px rgba(28, 31, 38, 0.09);
+}
+
+
+/* ---------- Clickable content ---------- */
+
+.yy-explore-link {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  min-height: 310px;
+
+  padding: 2.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #1c1d21;
+
+  text-decoration: none;
+}
+
+.yy-card-number {
+  display: block;
+
+  margin-bottom: 4.2rem;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+
+  color: rgba(32, 34, 40, 0.36);
+}
+
+.yy-explore-link h3 {
+  margin: 0 0 0.55rem;
+
+  font-size: clamp(2rem, 2.6vw, 2.8rem);
+  font-weight: 550;
+  letter-spacing: -0.04em;
+
+  color: #1b1c20;
+}
+
+.yy-explore-link p {
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: rgba(35, 37, 43, 0.52);
+}
+
+
+/* ---------- Arrow ---------- */
+
+.yy-card-arrow {
+  position: absolute;
+
+  right: 2rem;
+  bottom: 2rem;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(30, 32, 38, 0.08);
+
+  font-size: 1.15rem;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.yy-explore-card:hover .yy-card-arrow {
+  transform: translateX(4px);
+
+  background: rgba(255, 255, 255, 0.94);
+}
+/* ---------- Colored accents for Explore cards ---------- */
+
+/* 项目：雾蓝 */
+.yy-project-card.card-spotlight {
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(171, 202, 235, 0.34),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(235, 242, 248, 0.56)
+    );
+
+  box-shadow:
+    inset 0 3px 0 rgba(142, 182, 222, 0.55),
+    0 16px 50px rgba(28, 31, 38, 0.055);
+}
+
+
+/* 生活：暖杏 / 淡粉 */
+.yy-life-card.card-spotlight {
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(236, 196, 178, 0.34),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(247, 236, 229, 0.56)
+    );
+
+  box-shadow:
+    inset 0 3px 0 rgba(218, 173, 153, 0.5),
+    0 16px 50px rgba(28, 31, 38, 0.055);
+}
+
+
+/* 关于：淡紫 */
+.yy-about-card.card-spotlight {
+  position: relative;
+  height: 100%;
+  min-height: 280px;
+  padding: 0;
+
+  overflow: hidden;
+  border-radius: 28px;
+
+  border: 1px solid rgba(128, 180, 255, 0.18) !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(15, 22, 40, 0.22),
+    rgba(20, 28, 48, 0.12)
+  ) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 48px rgba(0, 0, 0, 0.18) !important;
+
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    background 0.45s ease;
+}
+
+.yy-about-card.card-spotlight:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(132, 198, 255, 0.32) !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(18, 28, 52, 0.30),
+    rgba(22, 34, 58, 0.18)
+  ) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 60px rgba(0, 0, 0, 0.24) !important;
+}
+.yy-card-number {
+  width: fit-content;
+
+  padding: 0.42rem 0.68rem;
+
+  border-radius: 999px;
+}
+
+.yy-project-card .yy-card-number {
+  color: rgba(69, 105, 145, 0.78);
+  background: rgba(168, 202, 236, 0.22);
+}
+
+.yy-life-card .yy-card-number {
+  color: rgba(144, 91, 71, 0.76);
+  background: rgba(236, 190, 169, 0.22);
+}
+
+.yy-about-card .yy-card-number {
+  color: rgba(103, 82, 139, 0.76);
+  background: rgba(196, 178, 225, 0.22);
+}
+.yy-project-card .yy-card-arrow {
+  background: rgba(222, 237, 250, 0.82);
+}
+
+.yy-life-card .yy-card-arrow {
+  background: rgba(250, 231, 221, 0.82);
+}
+
+.yy-about-card .yy-card-arrow {
+  background: rgba(236, 227, 248, 0.82);
+}
+/* =========================================================
+   6. Tablet
+   ========================================================= */
+/* =========================================================
+   Fifth Scene — Recent
+   ========================================================= */
+
+.yy-recent-demo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 88vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10vh 8vw 14vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(238, 240, 242, 0.88) 0%,
+      rgba(244, 241, 236, 0.96) 72%,
+      #f4f1ec 100%
+    );
+}
+
+.yy-recent-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.yy-recent-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.yy-recent-kicker {
+  margin-bottom: 0.9rem;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+
+  color: rgba(35, 36, 42, 0.4);
+}
+
+.yy-recent-heading h2 {
+  margin: 0;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+  font-size: clamp(2.6rem, 4.3vw, 4.7rem);
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+
+  color: #1b1c20;
+}
+
+.yy-recent-line {
+  width: 100%;
+  height: 1px;
+
+  margin: 3rem 0 2.2rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(28, 30, 36, 0.16),
+      rgba(28, 30, 36, 0.035)
+    );
+}
+
+.yy-recent-empty {
+  display: flex;
+  align-items: center;
+
+  gap: 0.85rem;
+}
+
+.yy-recent-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #b7a9c9;
+
+  box-shadow:
+    0 0 0 6px rgba(183, 169, 201, 0.12);
+}
+
+.yy-recent-empty p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  font-weight: 400;
+
+  letter-spacing: 0.02em;
+
+  color: rgba(34, 36, 42, 0.5);
+}
+/* =========================================================
+   Sixth Scene — Footer
+   ========================================================= */
+
+.yy-footer-demo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  padding: 10vh 8vw 4vh;
+
+  background: #f4f1ec;
+}
+
+.yy-footer-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+
+/* ---------- Top ---------- */
+
+.yy-footer-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 3rem;
+}
+
+.yy-footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.yy-footer-name {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: clamp(3.6rem, 7vw, 7rem);
+  font-weight: 600;
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+
+  color: #191a1e;
+}
+
+.yy-footer-brand p {
+  margin: 1.2rem 0 0;
+
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+
+  color: rgba(35, 36, 42, 0.5);
+}
+
+
+/* ---------- Back to top ---------- */
+
+.yy-back-top {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(30, 32, 38, 0.1);
+
+  background: rgba(255, 255, 255, 0.62);
+
+  color: #202126;
+
+  font-size: 1.35rem;
+  text-decoration: none;
+
+  box-shadow:
+    0 12px 30px rgba(30, 32, 38, 0.06);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.yy-back-top:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 18px 38px rgba(30, 32, 38, 0.1);
+}
+
+
+/* ---------- Divider ---------- */
+
+.yy-footer-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 5rem 0 1.6rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(32, 34, 40, 0.14),
+      rgba(32, 34, 40, 0.025)
+    );
+}
+
+
+/* ---------- Bottom ---------- */
+
+.yy-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  font-size: 0.8rem;
+
+  color: rgba(35, 36, 42, 0.38);
+}
+
+.yy-footer-small {
+  letter-spacing: 0.04em;
+}
+@media (max-width: 900px) {
+  .yy-demo-title {
+    font-size: clamp(4rem, 12vw, 6.5rem);
+  }
+
+  .yy-philosophy-text {
+    font-size: clamp(2.3rem, 7vw, 4.2rem);
+  }
+
+  .yy-manifesto-inner {
+    width: 70vw;
+
+    margin-left: 7vw;
+
+    gap: 2.5rem;
+  }
+
+  .yy-manifesto-line {
+    font-size: clamp(3rem, 7vw, 4.6rem);
+  }
+
+  .yy-manifesto-line-2 {
+    margin-left: 4vw;
+  }
+
+  .yy-manifesto-line-3 {
+    margin-left: 8vw;
+  }
+}
+
+
+/* =========================================================
+   7. Mobile
+   ========================================================= */
+
+@media (max-width: 640px) {
+  /* ---------- Hero ---------- */
+
+  .yy-hero-demo {
+    width: 100%;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    transform: translateY(-3vh);
+  }
+
+  .yy-demo-title {
+    font-size: clamp(3.6rem, 17vw, 5rem);
+
+    letter-spacing: -0.055em;
+  }
+
+  .yy-demo-subtitle {
+    margin-top: 0.9rem;
+
+    font-size: 1.05rem;
+
+    letter-spacing: 0.06em;
+  }
+
+
+  /* ---------- Buttons ---------- */
+
+  .yy-demo-actions {
+    width: 100%;
+
+    margin-top: 1.8rem;
+
+    flex-direction: column;
+
+    gap: 1rem;
+  }
+
+  .yy-demo-btn {
+    width: min(320px, 86vw);
+
+    min-height: 48px;
+  }
+
+
+  /* ---------- Philosophy ---------- */
+
+  .yy-philosophy-demo {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .yy-philosophy-text {
+    font-size: clamp(2rem, 9vw, 3rem);
+
+    line-height: 1.55;
+  }
+
+  .yy-philosophy-line {
+    white-space: nowrap;
+  }
+
+  .yy-wave-char {
+    margin-right: 0.065em;
+  }
+
+
+  /* ---------- Manifesto ---------- */
+
+  .yy-manifesto-demo {
+    padding: 8vh 0;
+  }
+
+  .yy-manifesto-inner {
+    width: 88vw;
+
+    margin-left: 6vw;
+    margin-right: 6vw;
+
+    gap: 2.2rem;
+  }
+
+  .yy-manifesto-line {
+    font-size: clamp(2.6rem, 11.5vw, 4rem);
+
+    letter-spacing: -0.04em;
+  }
+
+  .yy-manifesto-line-1 {
+    margin-left: 0;
+  }
+
+  .yy-manifesto-line-2 {
+    margin-left: 3vw;
+  }
+
+  .yy-manifesto-line-3 {
+    margin-left: 6vw;
+  }
+  .yy-explore-demo {
+  padding: 9vh 5vw;
+}
+
+.yy-explore-heading {
+  margin-bottom: 2.8rem;
+}
+
+.yy-explore-heading h2 {
+  font-size: clamp(2.3rem, 10vw, 3.2rem);
+}
+
+.yy-explore-grid {
+  grid-template-columns: 1fr;
+
+  gap: 1rem;
+}
+
+.yy-explore-card.card-spotlight,
+.yy-explore-link {
+  min-height: 240px;
+}
+
+.yy-card-number {
+  margin-bottom: 2.8rem;
+}
+}
+
+
+/* =========================================================
+   8. Very Small Phones
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .yy-demo-title {
+    font-size: clamp(3.3rem, 16vw, 4.3rem);
+  }
+
+  .yy-demo-subtitle {
+    font-size: 1rem;
+  }
+
+  .yy-philosophy-text {
+    font-size: clamp(1.85rem, 8.5vw, 2.6rem);
+  }
+
+  .yy-manifesto-inner {
+    gap: 1.9rem;
+  }
+
+  .yy-manifesto-line {
+    font-size: clamp(2.4rem, 11vw, 3.3rem);
+  }
+}
+
+
+/* =========================================================
+   9. Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .yy-demo-btn,
+  .yy-glare-button {
+    transition: none;
+  }
+
+  .yy-demo-btn:hover {
+    transform: none;
+  }
+    /* ---------- Footer ---------- */
+
+  .yy-footer-demo {
+    padding: 9vh 6vw 4vh;
+  }
+
+  .yy-footer-top {
+    align-items: flex-end;
+  }
+
+  .yy-footer-name {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .yy-footer-brand p {
+    font-size: 0.92rem;
+  }
+
+  .yy-back-top {
+    width: 50px;
+    height: 50px;
+  }
+
+  .yy-footer-divider {
+    margin-top: 3.5rem;
+  }
+
+  .yy-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0.6rem;
+  }
+}
+/* =========================================================
+   Global Navigation
+   ========================================================= */
+
+.yy-site-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 9999;
+
+  width: min(1120px, 92vw);
+  height: 58px;
+
+  padding: 0 1.2rem 0 1.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid rgba(120, 130, 150, 0.12);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  box-shadow:
+    0 12px 38px rgba(20, 24, 34, 0.08);
+
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.yy-nav-brand {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  letter-spacing: -0.025em;
+
+  color: #1d1e22;
+
+  text-decoration: none;
+}
+
+.yy-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 0.35rem;
+}
+
+.yy-nav-links a,
+.yy-nav-disabled {
+  padding: 0.58rem 0.9rem;
+
+  border-radius: 999px;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  color: rgba(28, 30, 36, 0.58);
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.yy-nav-links a:hover {
+  color: #1c1d21;
+
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.yy-nav-links a.is-active {
+  color: #18191d;
+
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.yy-nav-disabled {
+  opacity: 0.4;
+
+  cursor: default;
+}
+body:has(.yy-about-page) .yy-site-nav {
+  border-color: rgba(140, 180, 255, 0.16);
+
+  background: rgba(7, 13, 26, 0.56);
+
+  box-shadow:
+    0 14px 42px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(22px) saturate(135%);
+  -webkit-backdrop-filter: blur(22px) saturate(135%);
+}
+
+body:has(.yy-about-page) .yy-nav-brand {
+  color: #f3f7ff;
+}
+
+body:has(.yy-about-page) .yy-nav-links a,
+body:has(.yy-about-page) .yy-nav-disabled {
+  color: rgba(220, 231, 247, 0.68);
+}
+
+body:has(.yy-about-page) .yy-nav-links a:hover {
+  color: #ffffff;
+
+  background: rgba(120, 165, 255, 0.1);
+}
+
+body:has(.yy-about-page) .yy-nav-links a.is-active {
+  color: #ffffff;
+
+  background: rgba(104, 157, 255, 0.14);
+}
+@media (max-width: 640px) {
+  .yy-site-nav {
+    top: 12px;
+
+    width: 94vw;
+    height: 54px;
+
+    padding: 0 0.75rem 0 1rem;
+  }
+
+  .yy-nav-brand {
+    font-size: 0.92rem;
+  }
+
+  .yy-nav-links {
+    gap: 0.1rem;
+  }
+
+  .yy-nav-links a,
+  .yy-nav-disabled {
+    padding: 0.5rem 0.55rem;
+
+    font-size: 0.78rem;
+  }
+
+  .yy-nav-disabled {
+    display: none;
+  }
+}
+/* =========================================================
+   Explore cards — small visual refinement only
+   ========================================================= */
+
+/* 1. 关于卡：改成更清晰的浅灰紫 + 雾蓝 */
+.yy-about-card.card-spotlight {
+  background:
+    radial-gradient(
+      circle at 16% 12%,
+      rgba(218, 205, 242, 0.72),
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(188, 213, 237, 0.66),
+      transparent 52%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(248, 247, 252, 0.94),
+      rgba(224, 228, 238, 0.90)
+    ) !important;
+
+  border-color: rgba(151, 157, 193, 0.20) !important;
+
+  box-shadow:
+    0 18px 48px rgba(28, 31, 38, 0.08) !important;
+}
+
+/* 关于卡 hover 仍然保持原来的轻微反馈 */
+.yy-about-card.card-spotlight:hover {
+  background:
+    radial-gradient(
+      circle at 16% 12%,
+      rgba(216, 199, 244, 0.80),
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(181, 210, 239, 0.72),
+      transparent 52%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(250, 249, 253, 0.97),
+      rgba(221, 226, 239, 0.94)
+    ) !important;
+
+  border-color: rgba(145, 151, 190, 0.28) !important;
+
+  box-shadow:
+    0 24px 60px rgba(28, 31, 38, 0.10) !important;
+}
+
+
+/* 2. 三张卡的中文标题统一轻微上移 */
+.yy-explore-link h3 {
+  transform: translateY(-25px);
+}
+
+
+/* 3. 三张卡的英文统一稍微增大 */
+.yy-explore-link p {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+
+/* 4. 关于卡英文提高对比度，避免看不清 */
+.yy-about-card .yy-explore-link p {
+  color: rgba(35, 37, 43, 0.66);
+}

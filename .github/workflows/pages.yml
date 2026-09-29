@@ -1,4 +1,4 @@
-name: Deploy Hexo to GitHub Pages
+name: Deploy React UI to GitHub Pages
 
 on:
   push:
@@ -32,12 +32,30 @@ jobs:
         with:
           node-version: "24"
           cache: npm
+          cache-dependency-path: react-ui/package-lock.json
 
       - name: Install dependencies
+        working-directory: react-ui
         run: npm ci
 
-      - name: Build Hexo
+      - name: Build React site
+        working-directory: react-ui
         run: npm run build
+
+      - name: Prepare direct routes
+        run: |
+          mkdir -p react-ui/dist/articles
+          mkdir -p react-ui/dist/projects
+          mkdir -p react-ui/dist/life
+          mkdir -p react-ui/dist/life/gallery
+          mkdir -p react-ui/dist/about
+
+          cp react-ui/dist/index.html react-ui/dist/articles/index.html
+          cp react-ui/dist/index.html react-ui/dist/projects/index.html
+          cp react-ui/dist/index.html react-ui/dist/life/index.html
+          cp react-ui/dist/index.html react-ui/dist/life/gallery/index.html
+          cp react-ui/dist/index.html react-ui/dist/about/index.html
+          cp react-ui/dist/index.html react-ui/dist/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -45,7 +63,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./public
+          path: ./react-ui/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
